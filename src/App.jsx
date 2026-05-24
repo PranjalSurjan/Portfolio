@@ -1,17 +1,30 @@
+import { useState } from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
 import Experience from './pages/Experience'
 import Education from './pages/Education'
 
+
 function App() {
+  const [isDark, setIsDark] = useState(true)
+
   return (
-    <div>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/projects">Projects</Link>
-        <Link to="/experience">Experience</Link>
-        <Link to="/education">Education</Link>
+    <div className={`app ${isDark ? 'dark' : 'light'}`}>
+      <nav className="nav">
+        <div className="nav-logo">PS://</div>
+        <div className="nav-links">
+          <Link className="nav-link" to="/">Home</Link>
+          <Link className="nav-link" to="/projects">Projects</Link>
+          <Link className="nav-link" to="/experience">Experience</Link>
+          <Link className="nav-link" to="/education">Education</Link>
+          <button 
+            className="theme-toggle" 
+            onClick={() => setIsDark(!isDark)}
+          >
+            {isDark ? '☀' : '☽'}
+          </button>
+        </div>
       </nav>
 
       <Routes>
