@@ -10,7 +10,7 @@ function Home() {
     <div className="hero" ref={heroRef}>
       <StarField />
       <div className="hero-inner">
-        <p className="hero-tag"> - based in Toronto, Canada</p>
+        <p className="hero-tag"> Dream, Chase, Repeat</p>
         <h1 className="hero-name">
           Pranjal<br />
           <span className="hero-name-accent">Surjan</span>
